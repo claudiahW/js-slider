@@ -18,10 +18,17 @@ let counter = 0;
 
 nextBtn.addEventListener("click",function(){
  counter++;
+ carousel();
 });
 
 prevBtn.addEventListener("click",function(){
     counter--;
+    carousel();
    });
 
-   
+// set up function to dynamically slide from one item to the next
+function carousel(){
+    slides.forEach(function(slide){
+      slide.style.transform = `translateX(-${counter * 100}%)`;  
+    });
+}
