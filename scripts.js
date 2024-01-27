@@ -26,6 +26,17 @@ prevBtn.addEventListener("click",function(){
     carousel();
    });
 
+function carousel(){
+    // working with slides
+
+//     if(counter === slides.length){
+//         counter =0;
+//     }
+//     if(counter < 0) {
+//        counter = slides.length - 1; 
+//     }
+// }   
+
 // set up function to dynamically slide from one item to the next
 function carousel(){
     slides.forEach(function(slide){
