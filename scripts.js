@@ -38,8 +38,10 @@ function carousel(){
 // }   
 
 // set up function to dynamically slide from one item to the next
-function carousel(){
+
     slides.forEach(function(slide){
       slide.style.transform = `translateX(-${counter * 100}%)`;  
     });
-}
+
+    prevBtn.style.display = "none";
+
