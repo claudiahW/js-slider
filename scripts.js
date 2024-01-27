@@ -4,44 +4,45 @@ const slides = document.querySelectorAll(".slide");
 const nextBtn = document.querySelector(".nextBtn");
 const prevBtn = document.querySelector(".prevBtn");
 
-// iterate over slides object using foreach method using an index
-slides.forEach(function(slide,index){
-    slide.style.left = `${index * 100}%`
+slides.forEach(function (slide,index) {
+    slide.style.left = `${index * 100}%`;
 });
 
-// set up functionality to control which slide is shown and which one is hidden
-
-// this first function controls whether the button will navigate to next slide or will go back to start
 
 // set up counter for prev and next btn 
 let counter = 0;
 
-nextBtn.addEventListener("click",function(){
+nextBtn.addEventListener("click",function () {
  counter++;
  carousel();
 });
 
-prevBtn.addEventListener("click",function(){
+prevBtn.addEventListener("click",function () {
     counter--;
     carousel();
    });
 
-function carousel(){
-    // working with slides
-
-//     if(counter === slides.length){
-//         counter =0;
-//     }
-//     if(counter < 0) {
-//        counter = slides.length - 1; 
-//     }
-// }   
+function carousel() {
 
 // set up function to dynamically slide from one item to the next
 
-    slides.forEach(function(slide){
+// working with buttons 
+if (counter < slides.length - 1) {
+nextBtn.style.display = "block";
+}
+else {
+    nextBtn.style.display = "none";
+}
+if (counter > 0) {
+    prevBtn.style.display = "block";
+}
+else {
+    prevBtn.style.display = "none";
+ }
+
+    slides.forEach(function (slide) {
       slide.style.transform = `translateX(-${counter * 100}%)`;  
     });
-
+}
     prevBtn.style.display = "none";
 
